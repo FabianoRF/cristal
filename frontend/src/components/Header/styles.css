@@ -1,0 +1,103 @@
+header{
+  box-shadow: 1px 1px 5px #000000c4;
+  width: 100%;
+}
+
+
+header div#half-up{
+  height: 70px;
+  background-color: var(--color-background-in-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 70px;
+}
+
+header div#half-up svg{
+  width: 50px;
+  height: 50px;
+}
+
+
+header div#half-up svg#bag{
+  margin-left: 5px;
+}
+
+header div#half-up svg#search{
+  width: 35px;
+  height: 35px;
+}
+
+
+header div#half-up img#logo{
+  width: 150px;
+  height: 50px;
+}
+
+header div#half-up div.search-space{
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: calc(100% + 3rem);
+  border: 0;
+
+  background-color: var(--color-background-in-white-focus);
+  border-radius: 1.6rem;
+}
+
+header div#half-up div.search-space input#textSearch{
+  background: none;
+  font-size:18px;
+  border: 0;
+  height:40px;
+  width:400px;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+header div#half-up div.search-space input#textSearch:focus{
+  outline: 0;
+}
+
+#half-up .search-space #textSearch:focus .search-space{
+  border: 1px solid black !important;
+}
+
+header div.links-user-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 200px;
+}
+
+
+header div#half-low{
+  width: 100%;
+  background: var(--color-background-in-black);
+  padding: 0 70px;
+
+}
+
+header div#half-low svg{
+  height: 50px;
+  width: 50px;
+  color: #fff;
+}
+
+header div#half-low ol{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+header div#half-low ol li {
+  list-style: none;
+}
+
+header div#half-low ol li p{
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-background-in-white);
+  font-size: 1.6rem;
+  font-weight: bold;
+}

@@ -1,0 +1,32 @@
+footer {
+  background-color: var(--color-background-in-black);
+  width: 100%;
+}
+
+footer div.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+footer div.text-container div.texting p{
+  color: var(--color-background-in-white);
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+footer div.socials-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 70px;
+  padding-bottom: 2rem;
+}
+
+footer div.socials-container svg{
+  color: #fff;
+  height: 40px;
+  width: 40px
+}
