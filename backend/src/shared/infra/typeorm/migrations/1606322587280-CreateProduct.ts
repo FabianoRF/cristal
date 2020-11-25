@@ -39,6 +39,10 @@ export default class CreateProduct1606322587280 implements MigrationInterface {
             name: 'max_parcels',
             type: 'int',
           },
+          {
+            name: 'image_url',
+            type: 'varchar',
+          },
 
           {
             name: 'created_at',
