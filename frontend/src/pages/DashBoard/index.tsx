@@ -11,7 +11,6 @@ const DashBoard: React.FC =() => {
     <>
       <Header />
 
-
         <section className="banner-container">
             <span className="spot-title">Cristal moda feminina</span>
             <span className="spot-title">A loja que acredita no potencial das mulheres.</span>
