@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+*{
+    overflow-x: hidden;
+}
+
+main {
+    width: 100vw;
+    height: 100%;
+    background-color: var(--color-background-in-grey);
+    flex-wrap: wrap;
+    padding: 0 70px;
+}
+
+
+main div#titulo {
+    border-bottom: 1px solid black;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 2.8rem;
+    padding-bottom: 2.8rem;
+    padding-left: 2.6rem;
+}
+
+main div#titulo h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+}
+
+main div#titulo p{
+    padding-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+}
+
+/* Campos */
+
+main div.campos{
+    margin-top: 2.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+main div.campos label{
+    display: block;
+    text-align: initial;
+    padding-left: 0.4rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    padding-top: 2rem; 
+    padding-bottom: 2rem;
+}
+
+
+/* Campos grandes e unicos */
+
+main div.campos div#nome input,
+div#cep input, 
+div#bairro input,
+div#complemento input{
+    width: 600px;
+    height: 35px;
+
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem;
+
+    font-family: 'Roboto', sans-serif;
+    color: var( --color-background-in-black);
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+main div.campos div#nome input:hover,
+div#cep input:hover, 
+div#bairro input:hover,
+div#complemento input:hover{
+    cursor: pointer;
+}
+
+main div.campos div#nome input:focus,
+div#cep input:focus, 
+div#bairro input:focus,
+div#complemento input:focus{
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem; 
+}
+
+/* Campos menores (Rua)*/
+
+main div.campos div#rua{
+    display: flex;   
+    margin-left: 312px;
+}
+
+main div.campos div#rua{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "camp_1 camp_2";
+    
+}
+
+main div.campos div#rua div#camp_1{
+    grid-area: camp_1;
+    width: 500px;
+    
+}
+
+main div.campos div#rua div#camp_1 input{
+    width: 480px;
+    height: 35px;
+
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem;
+
+    font-family: 'Roboto', sans-serif;
+    color: var( --color-background-in-black);
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+main div.campos div#rua div#camp_1 input:hover{
+    cursor: pointer;
+}
+main div.campos div#rua div#camp_2{
+    grid-area: camp_2;
+    width: 100px;
+   
+}
+
+main div.campos div#rua div#camp_2 input{
+    width: 100px;
+    height: 35px;
+
+    
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem;
+
+    font-family: 'Roboto', sans-serif;
+    color: var( --color-background-in-black);
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+main div.campos div#rua div#camp_2 input:hover{
+    cursor: pointer;
+}
+
+/* Config menores (cidade)*/
+
+main div.campos div#cidade{
+    display: flex;   
+    margin-left: 220px;
+}
+
+main div.campos div#cidade{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "cid est";
+    gap: 20px;
+    
+}
+
+main div.campos div#cidade div#cid{
+    grid-area: cid;
+    width: 400px;
+    
+}
+
+main div.campos div#cidade div#cid input{
+    width: 400px;
+    height: 35px;
+
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem;
+
+    font-family: 'Roboto', sans-serif;
+    color: var( --color-background-in-black);
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+main div.campos div#cidade div#cid input:hover{
+    cursor: pointer;
+}
+main div.campos div#cidade div#est{
+    grid-area: est;
+    width: 200px;
+   
+}
+
+main div.campos div#cidade div#est input{
+    width: 180px;
+    height: 35px;
+
+    
+    border: 1px solid var(--color-shadows-pictures-box);
+    border-radius: 0.6rem;
+
+    font-family: 'Roboto', sans-serif;
+    color: var( --color-background-in-black);
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+main div.campos div#cidade div#est input:hover{
+    cursor: pointer;
+}
+
+/* Botao */
+
+div.button{
+    width: 500px;
+    height: 80px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.button a{
+    height: 80px;
+    width: 300px;
+}
+div.button button{
+    width: 250px;
+    height: 50px;
+    margin-left: 40px;
+    color: var(--color-text-buttons);
+    font-size: 2.6rem;
+    background-color: var(--color-orange-buttons);
+
+    border-radius: 0.6rem;
+    border: none;
+
+    box-shadow: 2px 2px 2px var(--color-shadows-pictures-box);
+
+    cursor: pointer;
+}

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+*{
+    overflow-x: hidden;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+}
+
+main div.cupom{
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    grid-template-areas: "info barra preco" ;
+    gap: 10px;   
+
+    border-bottom: 2px solid var(--color-shadows-pictures-box);
+
+    width: 90%;
+    margin-left: 4.8rem;
+    padding-bottom: 50px;
+    
+}
+
+main h1#titulo_1{
+    grid-area: info;
+    margin-top: 2.8rem;
+    margin-left: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.8rem;
+}
+
+main h1#titulo_2{
+    grid-area: preco;
+    margin-top: 2.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.8rem;
+}
+
+/* Informações do clienete */
+main div.cupom section#info{
+    grid-area: info;
+    background: var(--color-back-preco);
+    margin-top: 7.0rem;
+    margin-left: 80px;
+    height: 200px;
+
+}
+
+main div.cupom section#info h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.0rem;
+    padding-top: 2.0rem;
+    padding-left: 2.8rem;
+    padding-bottom: 0.6rem;
+}
+
+main div.cupom section#info  p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    padding-top: 0.3rem;
+    padding-left: 2.8rem;
+    
+}
+
+main div.cupom section#info a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    padding-left: 2.8rem;
+    text-decoration: underline;
+}
+
+/* Barra */
+main div.cupom section#barra{
+    grid-area: barra;
+    height: 250px;
+    margin-top: 2.8rem;
+    margin-left: 30px;
+    border-left: 2px solid var(--color-shadows-pictures-box);
+}
+
+/* Informações do pedido */
+main div.cupom section#preco{
+    grid-area: preco;
+    background: var(--color-back-preco);
+    margin-top: 7rem;
+    margin-right: 80px;
+    padding-left: 5;
+    height: 200px;
+}
+
+main div.cupom section#preco h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.0rem;
+    padding-top: 2.0rem;
+    padding-left: 2.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--color-shadows-pictures-box);
+}
+
+main div.cupom section#preco div#num_produ{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "txt1 txt2";
+}
+
+main div.cupom section#preco div#num_produ p#text_1{
+    grid-area: txt1;
+    padding-left: 2.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+    font-weight: bolder;
+}
+main div.cupom section#preco div#num_produ p#text_2{
+    grid-area: txt2;
+    padding-left: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+}
+
+/* Frete  */
+
+main div.cupom section#preco{
+    grid-area: preco;
+    background: var(--color-back-preco);
+    margin-top: 7rem;
+    margin-right: 80px;
+    padding-left: 5;
+    height: 200px;
+}
+
+main div.cupom section#preco h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.0rem;
+    padding-top: 2.0rem;
+    padding-left: 2.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--color-shadows-pictures-box);
+}
+
+main div.cupom section#preco div#frete{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "txt3 txt4";
+    padding-bottom: 1.6rem;
+    border-bottom: 2px solid var(--color-shadows-pictures-box);
+}
+
+main div.cupom section#preco div#frete p#text_3{
+    grid-area: txt3;
+    padding-left: 2.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+    font-weight: bolder;
+}
+main div.cupom section#preco div#frete p#text_4{
+    grid-area: txt4;
+    padding-left: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+}
+
+/* Total */
+
+main div.cupom section#preco{
+    grid-area: preco;
+    background: var(--color-back-preco);
+    margin-top: 7rem;
+    margin-right: 80px;
+    padding-left: 5;
+    height: 200px;
+}
+
+main div.cupom section#preco h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.0rem;
+    padding-top: 2.0rem;
+    padding-left: 2.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--color-shadows-pictures-box);
+}
+
+main div.cupom section#preco div#total{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "txt5 txt6";
+    padding-bottom: 1.0rem;
+}
+
+main div.cupom section#preco div#total p#text_5{
+    grid-area: txt5;
+    padding-left: 2.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+    font-weight: bolder;
+}
+main div.cupom section#preco div#total p#text_6{
+    grid-area: txt6;
+    padding-left: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1.0rem;
+}
+
+main div.cupom section#preco p#divisor{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-right: 2.8rem;
+    float: right;
+}
+
+main div.buy-button-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+main div.buy-button-container #button-finally-buy{
+    height: 6rem;
+    width: 500px;
+
+    border: 0;
+    background-color: var(--color-orange-buttons);
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: var(--color-text-buttons);
+    border-radius: 10px;
+    box-shadow: 0px 0.2px 2px var(--color-shadow-black);
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+main div.buy-button-container #button-finally-buy:hover{
+    opacity: 0.8;
+}
