@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import CreateProductService from '@modules/products/services/CreateProductService';
 import DeleteProductService from '@modules/products/services/DeleteProductService';
@@ -21,8 +22,9 @@ export default class UsersController {
       price,
       quantity,
       max_parcels,
-      image_url,
     } = request.body;
+
+    const image_url = request.file.filename;
 
     const createProduct = container.resolve(CreateProductService);
 
@@ -36,7 +38,7 @@ export default class UsersController {
       image_url,
     });
 
-    return response.json(product);
+    return response.json(classToClass(product));
   }
 
   async delete(request: Request, response: Response): Promise<Response> {
@@ -75,7 +77,7 @@ export default class UsersController {
       image_url,
     });
 
-    return response.json(product);
+    return response.json(classToClass(product));
   }
 
   async show(request: Request, response: Response): Promise<Response> {
@@ -85,7 +87,7 @@ export default class UsersController {
 
     const product = await listOneProduct.execute(id);
 
-    return response.json(product);
+    return response.json(classToClass(product));
   }
 
   async index(request: Request, response: Response): Promise<Response> {
@@ -93,8 +95,8 @@ export default class UsersController {
 
     const listProducts = container.resolve(ListProductsService);
 
-    const users = await listProducts.execute({ category, limit });
+    const products = await listProducts.execute({ category, limit });
 
-    return response.json(users);
+    return response.json(classToClass(products));
   }
 }

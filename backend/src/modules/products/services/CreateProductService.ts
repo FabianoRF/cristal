@@ -1,3 +1,4 @@
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 import { inject, injectable } from 'tsyringe';
 
 // import AppError from '@shared/errors/AppError';s
@@ -20,6 +21,9 @@ class CreateProductService {
   constructor(
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
+
+    @inject('StorageProvider')
+    private storageProvider: IStorageProvider,
   ) {}
 
   public async execute({
@@ -32,6 +36,8 @@ class CreateProductService {
     image_url,
   }: IRequest): Promise<Product> {
     // tratar aqui regras referentes a categoria do produto
+    const filename = await this.storageProvider.saveFile(image_url);
+
     const product = await this.productsRepository.create({
       name,
       category,
@@ -39,7 +45,7 @@ class CreateProductService {
       price,
       quantity,
       max_parcels,
-      image_url,
+      image_url: filename,
     });
 
     return product;
