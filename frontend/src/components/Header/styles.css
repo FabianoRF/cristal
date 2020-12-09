@@ -24,8 +24,8 @@ header div#half-up svg#bag{
 }
 
 header div#half-up svg#search{
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
 }
 
 
@@ -59,9 +59,6 @@ header div#half-up div.search-space input#textSearch:focus{
   outline: 0;
 }
 
-#half-up .search-space #textSearch:focus .search-space{
-  border: 1px solid black !important;
-}
 
 header div.links-user-container{
   display: flex;

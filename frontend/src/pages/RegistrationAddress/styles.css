@@ -53,7 +53,7 @@ main div.campos label{
 
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
-    padding-top: 2rem; 
+    padding-top: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -61,7 +61,7 @@ main div.campos label{
 /* Campos grandes e unicos */
 
 main div.campos div#nome input,
-div#cep input, 
+div#cep input,
 div#bairro input,
 div#complemento input{
     width: 600px;
@@ -77,24 +77,23 @@ div#complemento input{
 }
 
 main div.campos div#nome input:hover,
-div#cep input:hover, 
+div#cep input:hover,
 div#bairro input:hover,
 div#complemento input:hover{
     cursor: pointer;
 }
 
 main div.campos div#nome input:focus,
-div#cep input:focus, 
+div#cep input:focus,
 div#bairro input:focus,
 div#complemento input:focus{
-    border: 1px solid var(--color-shadows-pictures-box);
-    border-radius: 0.6rem; 
+    border-radius: 0.6rem;
 }
 
 /* Campos menores (Rua)*/
 
 main div.campos div#rua{
-    display: flex;   
+    display: flex;
     margin-left: 312px;
 }
 
@@ -102,13 +101,13 @@ main div.campos div#rua{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-template-areas: "camp_1 camp_2";
-    
+
 }
 
 main div.campos div#rua div#camp_1{
     grid-area: camp_1;
     width: 500px;
-    
+
 }
 
 main div.campos div#rua div#camp_1 input{
@@ -130,14 +129,14 @@ main div.campos div#rua div#camp_1 input:hover{
 main div.campos div#rua div#camp_2{
     grid-area: camp_2;
     width: 100px;
-   
+
 }
 
 main div.campos div#rua div#camp_2 input{
     width: 100px;
     height: 35px;
 
-    
+
     border: 1px solid var(--color-shadows-pictures-box);
     border-radius: 0.6rem;
 
@@ -154,7 +153,7 @@ main div.campos div#rua div#camp_2 input:hover{
 /* Config menores (cidade)*/
 
 main div.campos div#cidade{
-    display: flex;   
+    display: flex;
     margin-left: 220px;
 }
 
@@ -163,13 +162,13 @@ main div.campos div#cidade{
     grid-template-columns: 1fr 1fr ;
     grid-template-areas: "cid est";
     gap: 20px;
-    
+
 }
 
 main div.campos div#cidade div#cid{
     grid-area: cid;
     width: 400px;
-    
+
 }
 
 main div.campos div#cidade div#cid input{
@@ -191,14 +190,14 @@ main div.campos div#cidade div#cid input:hover{
 main div.campos div#cidade div#est{
     grid-area: est;
     width: 200px;
-   
+
 }
 
 main div.campos div#cidade div#est input{
     width: 180px;
     height: 35px;
 
-    
+
     border: 1px solid var(--color-shadows-pictures-box);
     border-radius: 0.6rem;
 

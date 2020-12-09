@@ -5,6 +5,7 @@ import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import AppError from '@shared/errors/AppError';
 import uploadConfig from '@config/upload';
+import cors from 'cors';
 
 import '@shared/container';
 import '@shared/infra/typeorm';
@@ -13,6 +14,7 @@ import routes from './routes';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/files', express.static(uploadConfig.uploadsFolder));

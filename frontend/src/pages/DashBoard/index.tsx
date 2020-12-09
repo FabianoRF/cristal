@@ -1,123 +1,59 @@
-import React from 'react';
-import './styles.css'
+import React, { useEffect, useMemo, useState } from 'react';
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import ProductBox from '../../components/ProductBox';
 
-import productImg from '../../assets/product1.png';
+import api from '../../services/api';
 
-const DashBoard: React.FC =() => {
+import { Banner, ProductContainer } from './styles';
+
+interface ProductData {
+  id: string;
+  name: string;
+  price: number;
+  image_url: string;
+  max_parcels: number;
+}
+
+const DashBoard: React.FC = () => {
+  const [products, setProducts] = useState<ProductData[]>([]);
+
+  useEffect(() => {
+    api.get('/products').then(response => {
+      setProducts(response.data);
+    });
+  }, []);
+
   return (
     <>
       <Header />
 
-        <section className="banner-container">
-            <span className="spot-title">Cristal moda feminina</span>
-            <span className="spot-title">A loja que acredita no potencial das mulheres.</span>
-        </section>
+      <Banner>
+        <span className="spot-title">Cristal moda feminina</span>
+        <span className="spot-title">
+          A loja que acredita no potencial das mulheres.
+        </span>
+      </Banner>
 
-        <main className="product-catalog">
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="pages/productDetails.html">
-                <div className="product-container">
-                    <img className="p-image" src={productImg} alt="Produto"/>
-
-                    <div className="product-text">
-                        <span className="p-title">Conjunto Short e Cropped</span>
-                        <span className="p-parcels">4x de 12,30</span>
-                        <span className="p-price">R$ 46,90</span>
-                    </div>
-                </div>
-            </a>
-
-        </main>
+      <ProductContainer>
+        {products.map((product, index) => (
+          <Link to={`/product-details/${product.id}`}>
+            <ProductBox
+              id={product.id}
+              image_url={product.image_url}
+              max_parcels={product.max_parcels}
+              name={product.name}
+              price={product.price}
+              key={product.id}
+            />
+          </Link>
+        ))}
+      </ProductContainer>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default DashBoard;

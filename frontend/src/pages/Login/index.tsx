@@ -1,50 +1,72 @@
 import React from 'react';
-import './styles.css'
+import { Form } from '@unform/web';
+import { FiLogIn, FiMail } from 'react-icons/fi';
+import { Container } from './styles';
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Input from '../../components/Input';
 
-const Login: React.FC =() => {
-    return (
-        <>
-            <Header />
+const Login: React.FC = () => {
+  return (
+    <>
+      <Header />
 
-                <main className="login-screen">
+      <Container>
+        <h2>Identificação</h2>
+        <div>
+          <div className="first">
+            <h2>Quero me cadastrar:</h2>
+            <Form
+              onSubmit={() => {
+                console.log('form');
+              }}
+            >
+              <Input
+                name="email"
+                type="email"
+                icon={FiMail}
+                placeholder="Digite seu email"
+              />
 
-                    <div className="primeira_parte">
-                        <h2 className="indentifica">Identificação:</h2>
-                    </div>
+              <button type="button" className="buy-button">
+                <FiLogIn />
+                Cadastrar
+              </button>
+            </Form>
+          </div>
 
-                    <div className="segunda_parte">
-                        <section className="cadastrar">
-                            <h2>Quero me cadastrar:</h2>
+          <div>
+            <h2>Já sou cliente:</h2>
+            <Form
+              onSubmit={() => {
+                console.log('form');
+              }}
+            >
+              <Input
+                name="email"
+                type="email"
+                icon={FiMail}
+                placeholder="Digite seu email"
+              />
+              <Input
+                name="password"
+                type="password"
+                icon={FiMail}
+                placeholder="Digite sua senha"
+              />
 
-                            <form action="" className="cad">
-                                <h1>Digite seu email:</h1>
-                                <input type="text" className="cad_input"/>
-                                <button className="cad_button" type="submit">Cadastrar</button>
-                            </form>
-
-                        </section>
-            
-                        <section className="entrar">
-                            <h2>Já sou cliente:</h2>
-
-                            <form action="" className="ent">
-                                <h1>Digite seu email:</h1>
-                                <input type="text" className="ent_input_email"/>
-                                <h1 className="text_senha">Senha:</h1>
-                                <input type="text" className="ent_input_senha"/>
-                                <button className="cad_button" type="submit">Entrar</button>
-                            </form>
-
-                            <a href=""><h3>Esqueci meu email ou senha</h3></a>
-                        </section>
-                    </div>
-                </main>
-            <Footer />
-        </>
-    )
-}
+              <button type="button" className="buy-button">
+                <FiLogIn />
+                Entrar
+              </button>
+            </Form>
+          </div>
+        </div>
+      </Container>
+      <Footer />
+    </>
+  );
+};
 
 export default Login;
