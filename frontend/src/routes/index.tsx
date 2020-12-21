@@ -1,5 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import Route from './Route';
 
 import DashBoard from '../pages/DashBoard';
 import Login from '../pages/Login';
@@ -11,6 +13,7 @@ import ProductDetails from '../pages/ProductDetails';
 
 import TableProducts from '../pages/adm/TableProducts';
 import RegisterProduct from '../pages/adm/RegisterProduct';
+import EditProduct from '../pages/adm/EditProduct';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -23,8 +26,9 @@ const Routes: React.FC = () => (
     <Route component={RegistrationAddress} path="/register-address" />
     <Route component={Price} path="/price" />
 
-    <Route component={TableProducts} path="/adm/products" />
-    <Route component={RegisterProduct} path="/adm/register-product" />
+    <Route component={TableProducts} path="/adm/products" isAdm />
+    <Route component={RegisterProduct} path="/adm/register-product" isAdm />
+    <Route component={EditProduct} path="/adm/edit-product/:id" isAdm />
   </Switch>
 );
 

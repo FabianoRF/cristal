@@ -16,6 +16,7 @@ interface IRequest {
 interface IResponse {
   user: User;
   token: string;
+  adm: boolean;
 }
 
 @injectable()
@@ -43,6 +44,11 @@ class AuthenticateUserService {
       throw new AppError('Incorrect email/password combination.', 401);
     }
 
+    const admPassword = process.env.ADM_PASSWORD;
+    const admEmail = process.env.ADM_EMAIL;
+
+    const adm = !!(password === admPassword && email === admEmail);
+
     const { secret, expiresIn } = authConfig.jwt;
 
     const token = sign({}, secret, {
@@ -53,6 +59,7 @@ class AuthenticateUserService {
     return {
       user,
       token,
+      adm,
     };
   }
 }

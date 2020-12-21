@@ -8,9 +8,16 @@ interface User {
   name: string;
 }
 
+interface Adm {
+  id: string;
+  email: string;
+  name: string;
+}
+
 interface AuthState {
   token: string;
-  user: User;
+  user: User | null;
+  adm: Adm | null;
 }
 
 interface Credentials {
@@ -19,7 +26,8 @@ interface Credentials {
 }
 
 interface AuthContextData {
-  user: User;
+  user: User | null;
+  adm: Adm | null;
   signIn(credentials: Credentials): Promise<void>;
   signOut(): void;
 }
@@ -28,11 +36,16 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>(() => {
-    const token = localStorage.getItem('@acec:token');
-    const user = localStorage.getItem('@acec:user');
+    const token = localStorage.getItem('@cristal:token');
+    const user = localStorage.getItem('@cristal:user');
+    const adm = localStorage.getItem('@cristal-adm:user');
+
+    if (adm && token) {
+      return { token, adm: JSON.parse(adm), user: null };
+    }
 
     if (token && user) {
-      return { token, user: JSON.parse(user) };
+      return { token, user: JSON.parse(user), adm: null };
     }
 
     return {} as AuthState;
@@ -44,23 +57,32 @@ const AuthProvider: React.FC = ({ children }) => {
       password,
     });
 
-    const { token, user } = response.data;
+    const { token, user, adm } = response.data;
 
     localStorage.setItem('@cristal:token', token);
-    localStorage.setItem('@cristal:user', JSON.stringify(user));
 
-    setData({ token, user });
+    if (adm) {
+      localStorage.setItem('@cristal-adm:user', JSON.stringify(user));
+      setData({ token, user: null, adm: user });
+    } else {
+      localStorage.setItem('@cristal:user', JSON.stringify(user));
+      setData({ token, user, adm: null });
+    }
   }, []);
 
   const signOut = useCallback(() => {
     localStorage.removeItem('@cristal:token');
     localStorage.removeItem('@cristal:user');
 
+    localStorage.removeItem('@cristal-adm:user');
+
     setData({} as AuthState);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider
+      value={{ user: data.user, adm: data.adm, signIn, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

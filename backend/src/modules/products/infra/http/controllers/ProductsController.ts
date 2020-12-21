@@ -59,7 +59,6 @@ export default class UsersController {
       price,
       quantity,
       max_parcels,
-      image_url,
     } = request.body;
 
     const { id } = request.params;
@@ -74,7 +73,6 @@ export default class UsersController {
       price,
       quantity,
       max_parcels,
-      image_url,
     });
 
     return response.json(classToClass(product));

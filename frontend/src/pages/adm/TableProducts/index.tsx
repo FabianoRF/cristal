@@ -80,7 +80,9 @@ const TableProducts: React.FC = () => {
           {showProducts.map(product => (
             <tr key={product.id}>
               <td className="td-edit">
-                <FiEdit />
+                <Link to={`/adm/edit-product/${product.id}`}>
+                  <FiEdit />
+                </Link>
                 {product.name}
               </td>
               <td>
@@ -90,7 +92,7 @@ const TableProducts: React.FC = () => {
               <td>{product.category}</td>
               <td>
                 {/* implementar aqui uma chamada para alterar apenas a quantidade do produto */}
-                <input type="number" value={product.quantity} />
+                <input type="number" defaultValue={product.quantity} />
                 {/* <select name="quantity" id="quantity">
                   <option value="1">1</option>
                   <option value="2">2</option>

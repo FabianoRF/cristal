@@ -12,7 +12,6 @@ interface IRequest {
   price: number;
   quantity: number;
   max_parcels: number;
-  image_url: string;
 }
 
 @injectable()
@@ -30,7 +29,6 @@ class ListProductService {
     price,
     quantity,
     max_parcels,
-    image_url,
   }: IRequest): Promise<Product> {
     const product = await this.productsRepository.findById(id);
 
@@ -46,7 +44,7 @@ class ListProductService {
       price,
       quantity,
       max_parcels,
-      image_url,
+      image_url: product.image_url,
     });
 
     return updatedProduct;

@@ -32,14 +32,19 @@ export const Container = styled.main`
       color: #666666;
     }
 
-    svg {
-      color: #666666;
-      height: 45px;
-      width: 45px;
-      transition: color 0.2s;
+    button {
+      border: 0;
+      background: transparent;
 
-      &:hover {
-        color: var(--color-orange-buttons);
+      svg {
+        color: #666666;
+        height: 45px;
+        width: 45px;
+        transition: color 0.2s;
+
+        &:hover {
+          color: var(--color-orange-buttons);
+        }
       }
     }
   }
