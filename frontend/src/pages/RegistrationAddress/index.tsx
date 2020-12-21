@@ -8,7 +8,7 @@ const RegistrationAddress: React.FC = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="container-address">
         <div id="titulo">
           <h1>Endereço de entrega</h1>
           <p>Por favor preencha alguns dados sobre você, será bem rapidinho!</p>

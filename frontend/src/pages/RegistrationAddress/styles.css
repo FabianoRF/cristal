@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-*{
-    overflow-x: hidden;
-}
-
-main {
+.container-address {
     width: 100vw;
     height: 100%;
     background-color: var(--color-background-in-grey);
@@ -13,7 +7,7 @@ main {
 }
 
 
-main div#titulo {
+.container-address div#titulo {
     border-bottom: 1px solid black;
     margin-left: 300px;
     margin-right: 300px;
@@ -22,12 +16,12 @@ main div#titulo {
     padding-left: 2.6rem;
 }
 
-main div#titulo h1{
+.container-address div#titulo h1{
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
 }
 
-main div#titulo p{
+.container-address div#titulo p{
     padding-top: 1rem;
     font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;
@@ -35,7 +29,7 @@ main div#titulo p{
 
 /* Campos */
 
-main div.campos{
+.container-address div.campos{
     margin-top: 2.6rem;
 
     display: flex;
@@ -46,7 +40,7 @@ main div.campos{
     margin-bottom: 50px;
 }
 
-main div.campos label{
+.container-address div.campos label{
     display: block;
     text-align: initial;
     padding-left: 0.4rem;
@@ -60,7 +54,7 @@ main div.campos label{
 
 /* Campos grandes e unicos */
 
-main div.campos div#nome input,
+.container-address div.campos div#nome input,
 div#cep input,
 div#bairro input,
 div#complemento input{
@@ -76,14 +70,14 @@ div#complemento input{
     padding-left: 10px;
 }
 
-main div.campos div#nome input:hover,
+.container-address div.campos div#nome input:hover,
 div#cep input:hover,
 div#bairro input:hover,
 div#complemento input:hover{
     cursor: pointer;
 }
 
-main div.campos div#nome input:focus,
+.container-address div.campos div#nome input:focus,
 div#cep input:focus,
 div#bairro input:focus,
 div#complemento input:focus{
@@ -92,25 +86,25 @@ div#complemento input:focus{
 
 /* Campos menores (Rua)*/
 
-main div.campos div#rua{
+.container-address div.campos div#rua{
     display: flex;
     margin-left: 312px;
 }
 
-main div.campos div#rua{
+.container-address div.campos div#rua{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-template-areas: "camp_1 camp_2";
 
 }
 
-main div.campos div#rua div#camp_1{
+.container-address div.campos div#rua div#camp_1{
     grid-area: camp_1;
     width: 500px;
 
 }
 
-main div.campos div#rua div#camp_1 input{
+.container-address div.campos div#rua div#camp_1 input{
     width: 480px;
     height: 35px;
 
@@ -123,16 +117,16 @@ main div.campos div#rua div#camp_1 input{
     padding-left: 10px;
 }
 
-main div.campos div#rua div#camp_1 input:hover{
+.container-address div.campos div#rua div#camp_1 input:hover{
     cursor: pointer;
 }
-main div.campos div#rua div#camp_2{
+.container-address div.campos div#rua div#camp_2{
     grid-area: camp_2;
     width: 100px;
 
 }
 
-main div.campos div#rua div#camp_2 input{
+.container-address div.campos div#rua div#camp_2 input{
     width: 100px;
     height: 35px;
 
@@ -146,18 +140,18 @@ main div.campos div#rua div#camp_2 input{
     padding-left: 10px;
 }
 
-main div.campos div#rua div#camp_2 input:hover{
+.container-address div.campos div#rua div#camp_2 input:hover{
     cursor: pointer;
 }
 
 /* Config menores (cidade)*/
 
-main div.campos div#cidade{
+.container-address div.campos div#cidade{
     display: flex;
     margin-left: 220px;
 }
 
-main div.campos div#cidade{
+.container-address div.campos div#cidade{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-template-areas: "cid est";
@@ -165,13 +159,13 @@ main div.campos div#cidade{
 
 }
 
-main div.campos div#cidade div#cid{
+.container-address div.campos div#cidade div#cid{
     grid-area: cid;
     width: 400px;
 
 }
 
-main div.campos div#cidade div#cid input{
+.container-address div.campos div#cidade div#cid input{
     width: 400px;
     height: 35px;
 
@@ -184,16 +178,16 @@ main div.campos div#cidade div#cid input{
     padding-left: 10px;
 }
 
-main div.campos div#cidade div#cid input:hover{
+.container-address div.campos div#cidade div#cid input:hover{
     cursor: pointer;
 }
-main div.campos div#cidade div#est{
+.container-address div.campos div#cidade div#est{
     grid-area: est;
     width: 200px;
 
 }
 
-main div.campos div#cidade div#est input{
+.container-address div.campos div#cidade div#est input{
     width: 180px;
     height: 35px;
 
@@ -207,7 +201,7 @@ main div.campos div#cidade div#est input{
     padding-left: 10px;
 }
 
-main div.campos div#cidade div#est input:hover{
+.container-address div.campos div#cidade div#est input:hover{
     cursor: pointer;
 }
 

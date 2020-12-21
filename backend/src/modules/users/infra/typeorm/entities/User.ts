@@ -18,6 +18,12 @@ class User {
   @Column()
   email: string;
 
+  @Column()
+  cpf: string;
+
+  @Column()
+  date_of_birth: string;
+
   @Exclude()
   @Column()
   password: string;

@@ -7,10 +7,13 @@
   --color-shadows-pictures-box:  #666666;
   --color-text-price-primary: #FFBC11;
   --color-text-description: #000000;
-  --color-text-grey: #666666;
+  --color-text-grey: #333333;
   --color-text-buttons:#FFFFFF;
   --color-shadow-black: #000000a4;
   --color-back-preco: #F4F4F4;
+  --color-green: #00A000;
+
+  
 
   font-size: 60%;
 }
@@ -34,7 +37,12 @@ a{
   color: var(--color-text-description);
 }
 
-button {
+button, input, textarea, svg {
   cursor: pointer;
 }
 
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 

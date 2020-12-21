@@ -9,7 +9,10 @@ import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 interface IRequest {
   name: string;
   email: string;
+  cpf: string;
+  date_of_birth: string;
   password: string;
+  password_confirmation: string;
 }
 
 @injectable()
@@ -22,11 +25,22 @@ class CreateUserService {
     private hashProvider: IHashProvider,
   ) {}
 
-  public async execute({ name, email, password }: IRequest): Promise<User> {
+  public async execute({
+    name,
+    email,
+    password,
+    cpf,
+    date_of_birth,
+    password_confirmation,
+  }: IRequest): Promise<User> {
     const userExists = await this.usersRepository.findByEmail(email);
 
     if (userExists) {
-      throw new AppError('User already exists.');
+      throw new AppError('User email already exists.');
+    }
+
+    if (password !== password_confirmation) {
+      throw new AppError('Password and password_confirmation do not matched');
     }
 
     const hashedPassword = await this.hashProvider.generateHash(password);
@@ -35,6 +49,8 @@ class CreateUserService {
       name,
       email,
       password: hashedPassword,
+      cpf,
+      date_of_birth,
     });
 
     return user;

@@ -26,21 +26,23 @@ export const Container = styled.section`
       }
 
       button {
-        height: 6rem;
-        width: 200px;
-        border: 0;
-        background-color: var(--color-orange-buttons);
-        font-size: 2.2rem;
-        font-weight: 500;
-        color: var(--color-text-buttons);
-        border-radius: 10px;
-        cursor: pointer;
-        transition: opacity 0.3s;
-
         display: flex;
         align-items: center;
         justify-content: center;
+
         margin: 20px auto;
+        height: 5rem;
+        width: 200px;
+        border: 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        border-radius: 10px;
+
+        background-color: var(--color-orange-buttons);
+        color: var(--color-text-buttons);
+
+        cursor: pointer;
+        transition: opacity 0.3s;
 
         svg {
           margin-right: 5px;

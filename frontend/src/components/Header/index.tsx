@@ -3,15 +3,16 @@ import { FiSearch, FiUser, FiShoppingBag, FiMenu } from 'react-icons/fi';
 
 import './styles.css';
 
+import { Link } from 'react-router-dom';
 import logoCristal from '../../assets/logocristal.png';
 
 const Header: React.FC = () => {
   return (
     <header>
-      <div id="half-up">
-        <a href="index.html">
+      <div className="half-up">
+        <Link to="/">
           <img id="logo" src={logoCristal} alt="Cristal Moda Feminina" />
-        </a>
+        </Link>
 
         <form action="" id="search">
           <div className="search-space">
@@ -25,34 +26,22 @@ const Header: React.FC = () => {
         </form>
 
         <div className="links-user-container">
-          <a href="/pages/cadastro.html">
+          <Link to="/login">
             <FiUser size="20" />
-          </a>
-          <a href="/pages/bag.html">
+          </Link>
+          <Link to="/bag">
             <FiShoppingBag id="bag" size="20" />
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div id="half-low">
-        <ol>
-          <FiMenu />
-          <a href="index.html">
-            <li>
-              <p>Home</p>
-            </li>
-          </a>
-          <li>
-            <p>Blusas</p>
-          </li>
-          <li>
-            <p>Calças</p>
-          </li>
-          <li>
-            <p>Calçados</p>
-          </li>
-        </ol>
-      </div>
+      <nav className="half-low">
+        <FiMenu />
+        <Link to="/">Home</Link>
+        <Link to="/">Blusas</Link>
+        <Link to="/">Calçados</Link>
+        <Link to="/">Calças</Link>
+      </nav>
     </header>
   );
 };

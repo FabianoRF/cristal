@@ -4,7 +4,7 @@ header{
 }
 
 
-header div#half-up{
+.half-up{
   height: 70px;
   background-color: var(--color-background-in-white);
   display: flex;
@@ -13,28 +13,31 @@ header div#half-up{
   margin: 0px 70px;
 }
 
-header div#half-up svg{
-  width: 50px;
-  height: 50px;
+.half-up svg{
+  width: 42px;
+  height: 42px;
+  transition: color 0.2s;
 }
 
-
-header div#half-up svg#bag{
+.half-up svg#bag{
   margin-left: 5px;
 }
 
-header div#half-up svg#search{
+.half-up svg#search{
   width: 25px;
   height: 25px;
 }
 
+.half-up svg:hover {
+  color: var(--color-orange-buttons);
+}
 
-header div#half-up img#logo{
+.half-up img#logo{
   width: 150px;
   height: 50px;
 }
 
-header div#half-up div.search-space{
+.half-up div.search-space{
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -45,7 +48,7 @@ header div#half-up div.search-space{
   border-radius: 1.6rem;
 }
 
-header div#half-up div.search-space input#textSearch{
+.half-up div.search-space input#textSearch{
   background: none;
   font-size:18px;
   border: 0;
@@ -55,7 +58,7 @@ header div#half-up div.search-space input#textSearch{
   cursor: pointer;
 }
 
-header div#half-up div.search-space input#textSearch:focus{
+.half-up div.search-space input#textSearch:focus{
   outline: 0;
 }
 
@@ -67,34 +70,32 @@ header div.links-user-container{
   width: 200px;
 }
 
-
-header div#half-low{
+.half-low{
   width: 100%;
   background: var(--color-background-in-black);
   padding: 0 70px;
-
-}
-
-header div#half-low svg{
-  height: 50px;
-  width: 50px;
-  color: #fff;
-}
-
-header div#half-low ol{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+
+}
+.half-low svg{
+  height: 36px;
+  width: 36px;
+  color: #fff;
 }
 
-
-header div#half-low ol li {
-  list-style: none;
-}
-
-header div#half-low ol li p{
-  font-family: 'Roboto', sans-serif;
+.half-low a{
+  padding: 10px;
   color: var(--color-background-in-white);
   font-size: 1.6rem;
-  font-weight: bold;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.half-low a:hover{
+  background-color: #444444;
+  font-size: 1.6rem;
+  font-weight: 600;
 }

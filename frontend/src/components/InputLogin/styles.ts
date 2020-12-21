@@ -14,9 +14,7 @@ export const Container = styled.div<ContainerProps>`
   padding: 16px;
   width: 100%;
 
-  border: 2px solid #232129;
-  color: #000;
-
+  border: 2px solid var(--color-text-grey);
   display: flex;
   align-items: center;
 
@@ -47,10 +45,10 @@ export const Container = styled.div<ContainerProps>`
     background: transparent;
     flex: 1;
     border: 0;
-    color: var(--color-text-price-primary);
+    color: var(--color-text-grey);
 
     &::placeholder {
-      color: #000;
+      color: var(--color-text-grey);
     }
   }
 

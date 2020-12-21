@@ -39,14 +39,13 @@ const DashBoard: React.FC = () => {
 
       <ProductContainer>
         {products.map((product, index) => (
-          <Link to={`/product-details/${product.id}`}>
+          <Link to={`/product-details/${product.id}`} key={product.id}>
             <ProductBox
               id={product.id}
               image_url={product.image_url}
               max_parcels={product.max_parcels}
               name={product.name}
               price={product.price}
-              key={product.id}
             />
           </Link>
         ))}
